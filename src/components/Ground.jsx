@@ -9,7 +9,7 @@ const Ground = () => {
     strokeWidth: '3px',
   };
 
-  const groundWidth = 5000;
+  const skyAndGroundWidth = 5000;
 
   return (
     <g id="ground">
