@@ -1,52 +1,58 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { pathFromBezierCurve } from '../utils/formulas';
 
-const CannonBase = (props) => {
-  const cannonBaseStyle = {
-    fill: '#a16012',
-    stroke: '#75450e',
+const CannonPipe = (props) => {
+  const cannonPipeStyle = {
+    fill: '#999',
+    stroke: '#666',
     strokeWidth: '2px',
   };
+  const transform = `rotate(${props.rotation}, 0, 0)`;
 
-  const baseWith = 80;
-  const halfBase = 40;
-  const height = 60;
-  const negativeHeight = height * -1;
+  const muzzleWidth = 40;
+  const halfMuzzle = 20;
+  const height = 100;
+  const yBasis = 70;
 
   const cubicBezierCurve = {
     initialAxis: {
-      x: -halfBase,
-      y: height,
+      x: -halfMuzzle,
+      y: -yBasis,
     },
     initialControlPoint: {
-      x: 20,
-      y: negativeHeight,
+      x: -40,
+      y: height * 1.7,
     },
     endingControlPoint: {
-      x: 60,
-      y: negativeHeight,
+      x: 80,
+      y: height * 1.7,
     },
     endingAxis: {
-      x: baseWith,
+      x: muzzleWidth,
       y: 0,
     },
   };
 
   return (
-    <g>
+    <g transform={transform}>
       <path
-        style={cannonBaseStyle}
+        style={cannonPipeStyle}
         d={pathFromBezierCurve(cubicBezierCurve)}
       />
       <line
-        x1={-halfBase}
-        y1={height}
-        x2={halfBase}
-        y2={height}
-        style={cannonBaseStyle}
+        x1={-halfMuzzle}
+        y1={-yBasis}
+        x2={halfMuzzle}
+        y2={-yBasis}
+        style={cannonPipeStyle}
       />
     </g>
   );
 };
 
-export default CannonBase;
+CannonPipe.propTypes = {
+  rotation: PropTypes.number.isRequired,
+};
+
+export default CannonPipe;
