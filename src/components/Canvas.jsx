@@ -14,7 +14,7 @@ const Canvas = (props) => {
   const viewBox = [window.innerWidth / -2, 100 - gameHeight, window.innerWidth, gameHeight];
   return (
     <svg
-      id="aliens-go-home-canvas"
+      id="test-game-canvas"
       preserveAspectRatio="xMaxYMax none"
       onMouseMove={props.trackMouse}
       viewBox={viewBox}
@@ -42,7 +42,7 @@ const Canvas = (props) => {
           key={flyingObject.id}
           position={flyingObject.position}
         />
-      }
+      ))}
     </svg>
   );
 };
@@ -61,7 +61,6 @@ Canvas.propTypes = {
       id: PropTypes.number.isRequired,
       })).isRequired,
     }).isRequired,
-  }).isRequired,
   trackMouse: PropTypes.func.isRequired,
   startGame: PropTypes.func.isRequired,
 };
