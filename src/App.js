@@ -44,7 +44,7 @@ class App extends Component {
           x: PropTypes.number.isRequired,
           y: PropTypes.number.isRequired
         }).isRequired,
-      id: PropTypes.number.isRequired,
+        id: PropTypes.number.isRequired,
       })).isRequired,
     }).isRequired,
     moveObjects: PropTypes.func.isRequired,
