@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import './index.css';
 import Game from './containers/Game';
 import reducer from './reducers';
-import registerServiceWorker from './registerServiceWorker';
+
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(
@@ -20,4 +20,4 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root'),
 );
-registerServiceWorker();
+// register();
