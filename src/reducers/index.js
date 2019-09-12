@@ -3,15 +3,11 @@ import moveObjects from './moveObjects';
 import startGame from './startGame';
 
 const initialGameState = {
-  // ... other initial properties ...
-  flyingObjects: [],
-  lastObjectCreatedAt: new Date(),
-};
-
-const initialGameState = {
   started: false,
   kills: 0,
   lives: 3,
+  flyingObjects: [],
+  lastObjectCreatedAt: new Date(),
 };
 
 const initialState = {
