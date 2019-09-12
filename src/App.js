@@ -1,24 +1,18 @@
-import React from 'react';
-import './App.css';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          TEST GAME.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>{this.props.message}</h1>
+      </div>
+    );
+  }
 }
+
+App.propTypes = {
+  message: PropTypes.string.isRequired,
+};
 
 export default App;
