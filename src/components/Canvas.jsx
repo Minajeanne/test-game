@@ -14,7 +14,7 @@ const Canvas = (props) => {
   const viewBox = [window.innerWidth / -2, 100 - window.innerHeight, window.innerWidth, window.innerHeight];
   return (
     <svg
-      id="aliens-go-home-canvas"
+      id="test-game-canvas"
       preserveAspectRatio="xMaxYMax none"
       onMouseMove={props.trackMouse}
       viewBox={viewBox}
